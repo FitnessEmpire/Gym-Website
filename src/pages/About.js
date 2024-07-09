@@ -37,6 +37,11 @@ export default function About() {
               Vidyaranyapuram, Mysore, Karnataka 570008
             </InfoDetail>
           </InfoSection>
+          <InfoSection>
+            <InfoTitle>Contact</InfoTitle>
+            <InfoDetail>7829073184 | 7406830400
+            </InfoDetail>
+          </InfoSection>
         </Content>
       </Right>
     </Container>
