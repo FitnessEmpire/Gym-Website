@@ -39,7 +39,9 @@ export default function About() {
           </InfoSection>
           <InfoSection>
             <InfoTitle>Contact</InfoTitle>
-            <InfoDetail>7829073184 | 7406830400
+            <InfoDetail>
+            <PhoneNumberLink href="tel:7829073184">7829073184</PhoneNumberLink>
+            <PhoneNumberLink href="tel:7406830400">7406830400</PhoneNumberLink>
             </InfoDetail>
           </InfoSection>
         </Content>
@@ -117,4 +119,9 @@ const InfoDetail = styled.p`
   font-size: 16px;
   font-weight: normal;
   color: #ccc;
+`;
+const PhoneNumberLink = styled.a`
+  color: white; /* Set the color to white */
+  text-decoration: none; /* Remove underline */
+  margin-right: 5px; /* Adjust margin if needed */
 `;

@@ -1,5 +1,17 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const glow = keyframes`
+  0% {
+    box-shadow: 0 0 5px #007bff;
+  }
+  50% {
+    box-shadow: 0 0 20px #007bff;
+  }
+  100% {
+    box-shadow: 0 0 5px #007bff;
+  }
+`;
 
 export default function Button({ children, style, animation }) {
   return (
@@ -19,4 +31,7 @@ const BTN = styled.button`
   cursor: pointer;
   animation: ${(props) => props.animation};
   animation-duration: 2s;
+  &:hover {
+    animation: ${glow} 1.5s infinite;
+  }
 `;

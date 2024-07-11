@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import bg from "../assets/Gym_5.jpg";
 
 export default function BecomeMember() {
@@ -32,7 +32,7 @@ export default function BecomeMember() {
   return (
     <Container>
       <FormContainer>
-        <Title>Become a Member</Title>
+        <Title>Enroll Today to Get Exclusive Offers</Title>
         <Form onSubmit={handleSubmit}>
           <Label>
             Name:
@@ -66,6 +66,28 @@ export default function BecomeMember() {
   );
 }
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const popInOut = keyframes`
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 5px #fff, 0 0 10px #000, 0 0 15px #000, 0 0 20px #000;
+  }
+  50% {
+    transform: scale(1.1);
+    text-shadow: 0 0 10px #fff, 0 0 20px #000, 0 0 30px #000, 0 0 40px #000;
+  }
+`;
+
 const Container = styled.div`
   box-sizing: border-box;
   min-height: 100vh;
@@ -87,10 +109,11 @@ const FormContainer = styled.div`
   width: 100%;
   max-width: 400px;
   padding: 20px;
-  background-color: rgba(249, 249, 249, 0.9);
+  background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(1, 0, 0, 0.1);
   backdrop-filter: blur(10px);
+  animation: ${fadeIn} 1s ease-in-out;
 
   @media (max-width: 768px) {
     max-width: 90%;
@@ -101,6 +124,8 @@ const Title = styled.h2`
   font-size: 24px;
   margin-bottom: 20px;
   text-align: center;
+  color: white;
+  animation: ${popInOut} 2s ease-in-out infinite;
 `;
 
 const Form = styled.form`
@@ -111,6 +136,8 @@ const Form = styled.form`
 const Label = styled.label`
   margin-bottom: 10px;
   font-size: 14px;
+  color: #fff; /* White color for labels */
+  animation: ${fadeIn} 1s ease-in-out;
 `;
 
 const Input = styled.input`
@@ -119,6 +146,14 @@ const Input = styled.input`
   border: 1px solid #cccccc;
   border-radius: 4px;
   font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent input background */
+  color: #000; /* Black text color */
+  animation: ${fadeIn} 1s ease-in-out;
+
+  &:focus {
+    outline: none;
+    border-color: #007bff;
+  }
 `;
 
 const Button = styled.button`
@@ -129,6 +164,7 @@ const Button = styled.button`
   border-radius: 4px;
   font-size: 18px;
   cursor: pointer;
+  animation: ${fadeIn} 1s ease-in-out;
 
   &:hover {
     background-color: #0056b3;
@@ -139,4 +175,6 @@ const Message = styled.p`
   font-size: 16px;
   margin-top: 20px;
   text-align: center;
+  color: #fff; /* White color for message */
+  animation: ${fadeIn} 1s ease-in-out;
 `;

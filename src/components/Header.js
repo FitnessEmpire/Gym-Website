@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 import { Link } from "react-router-dom";
 import Logo from "../reusable/Logo";
 import Button from "../reusable/Button";
@@ -9,8 +9,20 @@ const menusData = [
   { id: 2, name: "About", path: "/about" },
   { id: 3, name: "Services", path: "/services" },
   { id: 4, name: "Trainers", path: "/trainers" },
-  {id:5, name: "Gallery", path: "/Gallery"}
+  { id: 5, name: "Gallery", path: "/Gallery" }
 ];
+
+const glow = keyframes`
+  0% {
+    box-shadow: 0 0 5px #007bff;
+  }
+  50% {
+    box-shadow: 0 0 20px #007bff;
+  }
+  100% {
+    box-shadow: 0 0 5px #007bff;
+  }
+`;
 
 export default function Header() {
   return (
@@ -27,7 +39,7 @@ export default function Header() {
           ))}
         </Menus>
         <Link to="/become-member">
-          <Button>Become a member</Button>
+          <Button animation={css`${glow} 1.5s infinite`}>Become a member</Button>
         </Link>
       </Right>
     </Container>
