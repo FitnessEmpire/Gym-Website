@@ -48,6 +48,11 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 0 10px;
+    background-attachment: scroll;
+  }
 `;
 
 const InnerContainer = styled.div`
@@ -56,6 +61,10 @@ const InnerContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 `;
 
 const Box = styled.div`
@@ -65,6 +74,7 @@ const Box = styled.div`
 const Header = styled.div`
   display: flex;
   justify-content: center;
+  text-align: center; /* Center text on mobile */
 `;
 
 const Cards = styled.div`
@@ -72,6 +82,12 @@ const Cards = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   margin-top: 50px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; /* Single column layout on mobile */
+    gap: 10px;
+    margin-top: 20px;
+  }
 `;
 
 const MyCard = styled.div`
@@ -85,12 +101,22 @@ const MyCard = styled.div`
   align-items: center;
   justify-content: center;
   padding: 20px;
-  color: #fff; /* Text color set to white */
+  color: #fff;
+
+  @media (max-width: 768px) {
+    height: 300px;
+    padding: 10px;
+  }
 `;
 
 const Icon = styled.span`
   font-size: 3rem;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
 `;
 
 const Title = styled.h3`
@@ -98,12 +124,21 @@ const Title = styled.h3`
   text-align: center;
   margin: 20px 0;
   font-weight: 400;
-  color: #fff; /* Text color set to white */
+  color: #fff;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
 `;
 
 const Description = styled.p`
   font-size: 1.6rem;
   text-align: center;
   font-weight: 300;
-  color: #fff; /* Text color set to white */
+  color: #fff;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;

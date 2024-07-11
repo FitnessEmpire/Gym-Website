@@ -14,13 +14,13 @@ const menusData = [
 
 const glow = keyframes`
   0% {
-    box-shadow: 0 0 5px #007bff;
+    box-shadow: 0 0 5px #faf7f7;
   }
   50% {
-    box-shadow: 0 0 20px #007bff;
+    box-shadow: 0 0 20px #faf7f7;
   }
   100% {
-    box-shadow: 0 0 5px #007bff;
+    box-shadow: 0 0 15px #faf7f7;
   }
 `;
 
